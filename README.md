@@ -2,6 +2,8 @@
 
 A template project for developing C++ applications for the TrimUI Brick handheld gaming device.
 
+Click **"Use this template"** to create your own TrimUI Brick C++ project with all the build tools and deployment scripts pre-configured.
+
 ## Features
 
 - Cross-compilation setup using Docker
@@ -25,17 +27,44 @@ brew install sdl2 sdl2_ttf pkg-config
 brew install bear  # Generates compile_commands.json for clangd
 ```
 
-## Quick Start
+## Getting Started
 
-1. Clone or copy this template
-2. Customize `PROJECT_NAME` in `Makefile`
-3. Update IP address in `scripts/deploy.sh` if needed
-4. Build and deploy:
+### Create New Project from Template
 
-```bash
-make brick      # Build for Brick
-./scripts/deploy.sh    # Deploy to device
-```
+1. **On GitHub**: Click the green "Use this template" button at the top of this repository
+2. **Choose a name** for your new project repository
+3. **Clone your new repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME.git
+   cd YOUR_PROJECT_NAME
+   ```
+
+### Configure Your Project
+
+1. **Copy and configure environment file**:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edit `.env`** with your project settings:
+   ```bash
+   PROJECT_NAME=your-app-name
+   PAK_NAME=your-app-name.pak
+   BRICK_IP=192.168.0.142
+   BRICK_PASS=tina
+   FTP_USER=minui:minui
+   ```
+
+3. **Build Docker image** (first time only):
+   ```bash
+   make docker-build
+   ```
+
+4. **Build and deploy**:
+   ```bash
+   make brick              # Cross-compile for Brick
+   ./scripts/deploy.sh     # Deploy to device
+   ```
 
 ## Build Commands
 
