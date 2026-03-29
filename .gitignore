@@ -1,0 +1,29 @@
+# Binaries
+my-brick-app
+my-brick-app-brick
+*.pak
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dSYM/
+deploy/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Compilation database
+compile_commands.json
+
+# Debug logs
+debug.log
+
+# Environment files
+.env
