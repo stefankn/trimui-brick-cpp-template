@@ -39,8 +39,6 @@ echo "Creating launch.sh..."
 cat > "${DEPLOY_DIR}/launch.sh" << EOF
 #!/bin/sh
 cd "\$(dirname "\$0")"
-export SDL_VIDEODRIVER=kmsdrm
-export SDL_AUDIODRIVER=alsa
 ./${PROJECT_NAME} 2>./debug.log
 EOF
 chmod +x "${DEPLOY_DIR}/launch.sh"
